@@ -12,6 +12,7 @@ git config --global user.email "$email"
 git config --global push.default "current"
 git config --global pull.rebase "false"
 git config --global core.editor "$editor"
+git config --global credential.helper store
 
 echo "All done!"
 
