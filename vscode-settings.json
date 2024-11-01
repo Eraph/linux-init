@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Monokai",
+    "workbench.sideBar.location": "right",
+    "window.titleBarStyle": "custom",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "editor.formatOnSave": true,
+    "debug.toolBarLocation": "docked",
+    "editor.inlineSuggest.enabled": false
+}
