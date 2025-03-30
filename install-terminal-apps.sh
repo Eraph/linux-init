@@ -1,8 +1,8 @@
 #!/bin/bash
 
-./config/apps-to-install.sh
+. config/apps-to-install.sh
 
-./helper-scripts/array-helpers.sh
+. helper-scripts/array-helpers.sh
 ./helper-scripts/install.sh ${terminalapps[*]// /}
 
 if contains zsh apps; then

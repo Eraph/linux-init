@@ -1,8 +1,8 @@
 #!/bin/bash
 
-../config/apps-to-install.sh
+. ../config/apps-to-install.sh
 
-./array-helpers.sh
+. array-helpers.sh
 
 if contains code apps; then
     # VS Code
