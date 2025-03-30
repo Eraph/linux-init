@@ -11,7 +11,7 @@ function contains() {
 
     for i in "${array[@]}"
     do
-        if [ "$i" -eq "$match" ] ; then
+        if [ "$i" == "$match" ] ; then
             return 0;
         fi
     done
