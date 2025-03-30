@@ -1,14 +1,11 @@
 #!/bin/sh
 
-apps=(
-    code
-    trayscale
-)
+../config/apps-to-install.sh
 
 # VS Code
 echo Preparing to install VS Code
 
-# Add other distro specific business as needed following the pattern in _install.sh
+# Add other distro specific business as needed following the pattern in install.sh
 if [ -x "$(command -v dnf)" ];
 then
     ## Fedora
@@ -18,4 +15,4 @@ else
     echo "This script doesn't support the package manager for this system!">&2;
 fi
 
-./_install.sh ${apps[*]// /}
+./install.sh ${desktopapps[*]// /}

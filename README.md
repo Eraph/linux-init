@@ -4,7 +4,7 @@ Scripts for setting up fresh installs just the way I like it.
 ## App Installation
 
 ### Desktop
-Install essential desktop and terminal apps.
+Install essential desktop and terminal apps. Configure by editing all of the `config/apps-to-install.sh` script.
 
 ``` bash
 ./install-full-desktop.sh
@@ -12,20 +12,20 @@ Install essential desktop and terminal apps.
 
 Runs both the `install-desktop-apps.sh` and `install-terminal-apps.sh` scripts.
 
-Installs the following apps:
+#### Default Apps
 
 - [VS Code](https://code.visualstudio.com/)
 - [Trayscale](https://github.com/DeedleFake/trayscale) (Tailscale GUI)
-- \+ all the apps mentioned below
+- \+ all the apps mentioned in [Server](#default-apps-1)
 
 ### Server
-Install essential terminal apps and set the default terminal to ZSH.
+Install essential terminal apps and set the default terminal to ZSH. Configure by editing the `terminalapps` and `zshplugins` arrays in `config/apps-to-install.sh`
 
 ``` bash
 ./install-terminal-apps.sh
 ```
 
-Installs the following apps:
+#### Default Apps
 
 - [asciiquarium](https://github.com/cmatsuoka/asciiquarium)
 - [bat](https://github.com/sharkdp/bat)
@@ -33,8 +33,10 @@ Installs the following apps:
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch)
 - [zsh](https://zsh.sourceforge.io/)
 
-Also sets up ZSH with [Oh My Zsh](https://ohmyz.sh/) and the [PowerLevel10k](https://github.com/romkatv/powerlevel10k) theme, along with the following plugins:
+#### Default Terminal Setup
 
+- [Oh My Zsh](https://ohmyz.sh/)
+- [PowerLevel10k Theme](https://github.com/romkatv/powerlevel10k)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [you-should-use](https://github.com/MichaelAquilina/zsh-you-should-use)
@@ -50,7 +52,7 @@ Set up good Git defaults by filling out the prompts.
 ```
 
 ## VS Code
-Set the VS Code settings for your user.
+Apply the VS Code settings for your user.
 
 > Warning: will overwrite existing config
 
@@ -59,5 +61,8 @@ Set the VS Code settings for your user.
 ```
 
 
-## Misc
-The `_install.sh` file is a helper for installing apps across different distros.
+## Helper Scripts
+The `helper-scripts` folder contains scripts that aren't really supposed to be run manually, but are referenced in other scripts.
+
+- `install.sh` is a helper for installing apps across different distros.
+- `install-desktop-apps.sh` handles installing desktop apps only.
