@@ -1,23 +1,8 @@
 #!/bin/sh
 
-apps=(
-    asciiquarium
-    bat
-    btop
-    fastfetch
-    zsh
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-)
+./config/apps-to-install.sh
 
-zshplugins=(
-    you-should-use
-    copypath
-    copyfile
-    dirhistory
-)
-
-./_install.sh ${apps[*]// /}
+./helper-scripts/install.sh ${terminalapps[*]// /}
 
 echo Setting ZSH as default shell
 chsh -s $(which zsh)

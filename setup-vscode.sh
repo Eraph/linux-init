@@ -1,3 +1,3 @@
 #!/bin/sh
 
-cp vscode-settings.json ~/.config/Code/User/settings.json
+cp config/vscode-settings.json ~/.config/Code/User/settings.json
