@@ -12,13 +12,3 @@ function contains () {
   for e; do [[ "$e" == "$match" ]] && return 0; done
   return 1
 }
-
-# Check if an array is empty
-# Usage: empty ${#array[@]}
-function empty() {
-    if [ $1 == 0 ];
-    then
-        return 1
-    fi
-    return 0
-}

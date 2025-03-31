@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [[ $(/usr/bin/id -u) -ne 0 ]]; then
-    echo "This script should be run as root"
-    exit
-fi
-
 . config/apps-to-install.sh
 
 . helper-scripts/array-helpers.sh
@@ -23,7 +18,7 @@ if contains zsh ${terminalapps[@]}; then
     echo Setting OMZ theme
     sed -i 's/^ZSH_THEME="\S*"$/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 
-    if ! empty ${#zshplugins[@]}; then
+    if [[ -n ${zshplugins[@]} ]]; then
         echo Installing plugins
         if contains zsh-autosuggestions ${zshplugins[@]}; then
             git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -31,7 +26,7 @@ if contains zsh ${terminalapps[@]}; then
         if contains zsh-syntax-highlighting ${zshplugins[@]}; then
             git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
         fi
-        if contains zsh-you-should-use ${zshplugins[@]}; then
+        if contains you-should-use ${zshplugins[@]}; then
             git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
         fi
 

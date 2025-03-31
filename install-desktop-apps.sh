@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [[ $(/usr/bin/id -u) -ne 0 ]]; then
-    echo "This script should be run as root"
-    exit
-fi
-
 . config/apps-to-install.sh
 
 . helper-scripts/array-helpers.sh
