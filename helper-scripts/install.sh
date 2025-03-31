@@ -15,7 +15,7 @@ then
 elif [ -x "$(command -v apt-get)" ];
 then
     apt-get update
-    apt-get install -y $@
+    apt-get install --ignore-missing -y $@
 elif [ -x "$(command -v dnf)" ];
 then
     dnf check-update
