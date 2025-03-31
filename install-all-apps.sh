@@ -5,5 +5,5 @@ if [[ $(/usr/bin/id -u) -ne 0 ]]; then
     exit
 fi
 
-./helper-scripts/install-desktop-apps.sh
+./install-desktop-apps.sh
 ./install-terminal-apps.sh
