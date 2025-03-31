@@ -10,14 +10,15 @@ terminalapps=(
     bat
     btop
     fastfetch
+    git
     zsh
-    zsh-autosuggestions
-    zsh-syntax-highlighting
 )
 
 zshplugins=(
-    you-should-use
     copypath
     copyfile
     dirhistory
+    you-should-use
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
