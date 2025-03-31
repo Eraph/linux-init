@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ $(/usr/bin/id -u) -ne 0 ]]; then
+    echo "This script should be run as root"
+    exit
+fi
+
 . ../config/apps-to-install.sh
 
 . array-helpers.sh
@@ -12,8 +17,8 @@ if contains code apps; then
     if [ -x "$(command -v dnf)" ];
     then
         ## Fedora
-        sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-        echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+        rpm --import https://packages.microsoft.com/keys/microsoft.asc
+        echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | tee /etc/yum.repos.d/vscode.repo > /dev/null
     else
         echo "This script doesn't support the package manager for this system!">&2;
     fi

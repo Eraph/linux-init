@@ -4,10 +4,10 @@ Scripts for setting up fresh installs just the way I like it.
 ## App Installation
 
 ### Desktop
-Install essential desktop and terminal apps. Configure by editing all of the `config/apps-to-install.sh` script.
+Install essential desktop and terminal apps. Configure by editing all of the `config/apps-to-install.sh` script. Run this script as a root user.
 
 ``` bash
-./install-full-desktop.sh
+sudo ./install-full-desktop.sh
 ```
 
 Runs both the `install-desktop-apps.sh` and `install-terminal-apps.sh` scripts.
@@ -19,10 +19,10 @@ Runs both the `install-desktop-apps.sh` and `install-terminal-apps.sh` scripts.
 - \+ all the apps mentioned in [Server](#default-apps-1)
 
 ### Server
-Install essential terminal apps and set the default terminal to ZSH. Configure by editing the `terminalapps` and `zshplugins` arrays in `config/apps-to-install.sh`
+Install essential terminal apps and set the default terminal to ZSH. Configure by editing the `terminalapps` and `zshplugins` arrays in `config/apps-to-install.sh`. Run this script as a root user.
 
 ``` bash
-./install-terminal-apps.sh
+sudo ./install-terminal-apps.sh
 ```
 
 #### Default Apps
