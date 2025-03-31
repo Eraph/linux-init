@@ -7,7 +7,7 @@ Scripts for setting up fresh installs just the way I like it.
 Install essential desktop and terminal apps. Configure by editing all of the `config/apps-to-install.sh` script. Run this script as a root user.
 
 ``` bash
-sudo ./install-full-desktop.sh
+sudo ./install-all-apps.sh
 ```
 
 Runs both the `install-desktop-apps.sh` and `install-terminal-apps.sh` scripts.
@@ -59,10 +59,3 @@ Apply the VS Code settings for your user.
 ``` bash
 ./setup-vscode.sh
 ```
-
-
-## Helper Scripts
-The `helper-scripts` folder contains scripts that aren't really supposed to be run manually, but are referenced in other scripts.
-
-- `install.sh` is a helper for installing apps across different distros.
-- `install-desktop-apps.sh` handles installing desktop apps only.

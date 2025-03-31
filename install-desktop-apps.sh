@@ -5,9 +5,9 @@ if [[ $(/usr/bin/id -u) -ne 0 ]]; then
     exit
 fi
 
-. ../config/apps-to-install.sh
+. config/apps-to-install.sh
 
-. array-helpers.sh
+. helper-scripts/array-helpers.sh
 
 if contains code ${apps[@]}; then
     # VS Code
@@ -24,4 +24,4 @@ if contains code ${apps[@]}; then
     fi
 fi
 
-./install.sh ${desktopapps[*]// /}
+./helper-scripts/install.sh ${desktopapps[*]// /}
