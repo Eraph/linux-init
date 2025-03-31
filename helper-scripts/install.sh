@@ -14,6 +14,7 @@ then
     apk add --no-cache -y $@
 elif [ -x "$(command -v apt-get)" ];
 then
+    apt-get update
     apt-get install -y $@
 elif [ -x "$(command -v dnf)" ];
 then
