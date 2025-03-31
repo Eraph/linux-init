@@ -9,7 +9,7 @@ fi
 
 . array-helpers.sh
 
-if contains code apps; then
+if contains code ${apps[@]}; then
     # VS Code
     echo Preparing to install VS Code
 
@@ -24,4 +24,4 @@ if contains code apps; then
     fi
 fi
 
-./install.sh ${desktopapps[*]// /}
+./install.sh $desktopapps

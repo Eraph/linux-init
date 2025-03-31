@@ -8,9 +8,9 @@ fi
 . config/apps-to-install.sh
 
 . helper-scripts/array-helpers.sh
-./helper-scripts/install.sh ${terminalapps[*]// /}
+./helper-scripts/install.sh $terminalapps
 
-if contains zsh apps; then
+if contains zsh ${apps[@]}; then
     echo Setting ZSH as default shell
     chsh -s $(which zsh)
 
@@ -23,7 +23,7 @@ if contains zsh apps; then
     echo Setting OMZ theme
     sed -i 's/^ZSH_THEME="\S*"$/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 
-    if notEmpty zshplugins; then
+    if ! empty ${#zshplugins[@]}; then
         echo Installing plugins
         git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
