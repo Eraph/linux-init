@@ -8,7 +8,7 @@ fi
 . config/apps-to-install.sh
 
 . helper-scripts/array-helpers.sh
-./helper-scripts/install.sh $terminalapps
+./helper-scripts/install.sh ${terminalapps[*]// /}
 
 if contains zsh ${apps[@]}; then
     echo Setting ZSH as default shell
@@ -25,9 +25,15 @@ if contains zsh ${apps[@]}; then
 
     if ! empty ${#zshplugins[@]}; then
         echo Installing plugins
-        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-        git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
+        if contains zsh-autosuggestions; then
+            git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        fi
+        if contains zsh-syntax-highlighting; then
+            git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+        fi
+        if contains zsh-you-should-use; then
+            git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
+        fi
 
         sed -ri "s/^plugins=\(([[:print:]]*)\)$/plugins=(\1 ${zshplugins[*]// /})/g" ~/.zshrc
     fi

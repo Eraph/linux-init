@@ -24,4 +24,4 @@ if contains code ${apps[@]}; then
     fi
 fi
 
-./install.sh $desktopapps
+./install.sh ${desktopapps[*]// /}
