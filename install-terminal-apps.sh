@@ -10,7 +10,7 @@ fi
 . helper-scripts/array-helpers.sh
 ./helper-scripts/install.sh ${terminalapps[*]// /}
 
-if contains zsh ${apps[@]}; then
+if contains zsh ${terminalapps[@]}; then
     echo Setting ZSH as default shell
     chsh -s $(which zsh)
 
@@ -25,13 +25,13 @@ if contains zsh ${apps[@]}; then
 
     if ! empty ${#zshplugins[@]}; then
         echo Installing plugins
-        if contains zsh-autosuggestions; then
+        if contains zsh-autosuggestions ${zshplugins[@]}; then
             git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
         fi
-        if contains zsh-syntax-highlighting; then
+        if contains zsh-syntax-highlighting ${zshplugins[@]}; then
             git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
         fi
-        if contains zsh-you-should-use; then
+        if contains zsh-you-should-use ${zshplugins[@]}; then
             git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
         fi
 

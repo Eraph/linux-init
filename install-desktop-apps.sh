@@ -9,7 +9,7 @@ fi
 
 . helper-scripts/array-helpers.sh
 
-if contains code ${apps[@]}; then
+if contains code ${desktopapps[@]}; then
     # VS Code
     echo Preparing to install VS Code
 
