@@ -39,7 +39,6 @@ Install essential terminal apps and set the default terminal to ZSH. Configure b
 - [PowerLevel10k Theme](https://github.com/romkatv/powerlevel10k)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-- [you-should-use](https://github.com/MichaelAquilina/zsh-you-should-use)
 - [copypath](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copypath)
 - [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile)
 - [dirhistory](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory)
@@ -58,4 +57,11 @@ Apply the VS Code settings for your user.
 
 ``` bash
 ./setup-vscode.sh
+```
+
+## ZSH
+Configure ZSH with the PowerLevel10k theme and additional plugins. This is also run when setting up the terminal apps.
+
+``` bash
+./setup-zsh.sh
 ```

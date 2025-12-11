@@ -18,7 +18,6 @@ zshplugins=(
     copypath
     copyfile
     dirhistory
-    you-should-use
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
